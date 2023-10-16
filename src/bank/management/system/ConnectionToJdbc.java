@@ -3,7 +3,6 @@ package bank.management.system;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class ConnectionToJdbc {
     Connection con;
@@ -21,9 +20,5 @@ public class ConnectionToJdbc {
 
     public Connection getCon() {
         return con;
-    }
-
-    public void setCon(Connection con) {
-        this.con = con;
     }
 }

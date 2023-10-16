@@ -9,9 +9,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class FastCashWithdrawlScreen extends JFrame implements ActionListener {
-    private int formNum;
-    private long cardNum;
-    private int pin;
+    private final int formNum;
+    private final long cardNum;
+    private final int pin;
     public FastCashWithdrawlScreen(int formNum, long cardNum, int pin){
         this.formNum = formNum;
         this.cardNum = cardNum;
@@ -99,13 +99,6 @@ public class FastCashWithdrawlScreen extends JFrame implements ActionListener {
         setLocation(300, 100);
         setLayout(null);
         setVisible(true);
-    }
-
-    public  boolean checkAmount(String amt){
-        String regex = "[0-9]+";
-        Pattern p = Pattern.compile(regex);
-        Matcher m = p.matcher(amt);
-        return m.matches();
     }
 
     @Override

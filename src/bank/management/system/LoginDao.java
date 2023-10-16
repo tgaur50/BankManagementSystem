@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 public class LoginDao {
     ConnectionToJdbc con;
-    private Connection cn = null;
+    private Connection cn;
     PreparedStatement ps;
     public LoginDao(){
         con = new ConnectionToJdbc();
@@ -28,7 +28,6 @@ public class LoginDao {
 
     public int authenticateLogin(long cardNum, int pin){
         int formNum = 0;
-        boolean isOk = false;
         ResultSet rs;
         String query = "select * from Login where cardNumber = ? and PIN = ?";
         try {
@@ -38,7 +37,6 @@ public class LoginDao {
             rs = ps.executeQuery();
             if (rs.next()){
                 formNum = rs.getInt(1);
-               isOk = true;
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);

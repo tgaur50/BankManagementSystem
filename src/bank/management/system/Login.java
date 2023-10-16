@@ -60,8 +60,8 @@ public class Login extends JFrame {
 
         signInBtn.addActionListener(e -> {
             String cardNum = cardField.getText();
-            String pinVal = pinField.getText();
-            int formNum = 0;
+            @SuppressWarnings("deprecation") String pinVal = pinField.getText();
+            int formNum;
             if (checkCardNum(cardNum) && checkPin(pinVal)){
                 LoginDao lgn = new LoginDao();
                 formNum = lgn.authenticateLogin(Long.parseLong(cardNum), Integer.parseInt(pinVal));

@@ -4,13 +4,11 @@ import javax.swing.*;
 import java.sql.*;
 
 public class CustomerTransactionsDao {
-    private ConnectionToJdbc con;
-    private Connection cn;
+    private final Connection cn;
     private PreparedStatement ps;
-    private Statement stm;
     private ResultSet rs;
     public CustomerTransactionsDao(){
-        con = new ConnectionToJdbc();
+        ConnectionToJdbc con = new ConnectionToJdbc();
         cn = con.getCon();
     }
 
@@ -27,7 +25,7 @@ public class CustomerTransactionsDao {
             throw new RuntimeException(e);
         }
     }
-    public void deposit(int formNum, long cardNum, int pin, int amt){
+    public void deposit(int formNum, int amt){
         String query1 = "select * from customer where formNumber = ?";
         try {
             ps = cn.prepareStatement(query1);

@@ -3,7 +3,6 @@ package bank.management.system;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class SignUpOneDao {
     public static void insertDetailsToSignupOne(int formNo, String name, String fName,

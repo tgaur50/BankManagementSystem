@@ -90,9 +90,7 @@ public class ATMMenuScreen extends JFrame {
             dispose();
         });
 
-        miniStm.addActionListener(e -> {
-            new MiniStatementScreen(formNum, cardNum, pin);
-        });
+        miniStm.addActionListener(e -> new MiniStatementScreen(formNum));
 
         pinchnange.addActionListener(e -> {
             new PinChangeScreen(formNum, cardNum, pin);
@@ -104,9 +102,7 @@ public class ATMMenuScreen extends JFrame {
             dispose();
         });
 
-        exit.addActionListener(e -> {
-            dispose();
-        });
+        exit.addActionListener(e -> dispose());
 
         setLayout(null);
         setVisible(true);

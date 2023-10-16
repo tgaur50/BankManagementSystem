@@ -6,8 +6,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class MiniStatementScreen extends JFrame {
-    private ResultSet rs;
-    public MiniStatementScreen(int formNum, long cardNum, int pin){
+    public MiniStatementScreen(int formNum){
         CustomerTransactionsDao ctd = new CustomerTransactionsDao();
 
         JLabel heading = new JLabel("Indian Bank");
@@ -29,7 +28,7 @@ public class MiniStatementScreen extends JFrame {
         cardNumVal.setBounds(150, 80, 150, 30);
         add(cardNumVal);
 
-        rs = ctd.getMiniStatement(formNum);
+        ResultSet rs = ctd.getMiniStatement(formNum);
 //        JScrollPane sp = new JScrollPane();
 //        int x = 30, y = 180, width = 200, height = 30;
         ArrayList<String> statementList = new ArrayList<>();
@@ -82,9 +81,7 @@ public class MiniStatementScreen extends JFrame {
         exit.setBounds(30, 460, 100, 30);
         add(exit);
 
-        exit.addActionListener(e -> {
-            dispose();
-        });
+        exit.addActionListener(e -> dispose());
 
         setTitle("Mini Statement");
         setSize(400, 550);

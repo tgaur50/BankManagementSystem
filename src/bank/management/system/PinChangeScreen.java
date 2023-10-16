@@ -60,8 +60,8 @@ public class PinChangeScreen extends JFrame {
         background.add(back);
 
         changeBtn.addActionListener(e -> {
-            String newPinVal = newPinField.getText();
-            String reEnterPinVal = rePinField.getText();
+            @SuppressWarnings("deprecation") String newPinVal = newPinField.getText();
+            @SuppressWarnings("deprecation") String reEnterPinVal = rePinField.getText();
             if (checkPin(newPinVal) && checkPin(reEnterPinVal))
             {
                 if (newPinVal.equals(reEnterPinVal)){

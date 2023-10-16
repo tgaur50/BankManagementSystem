@@ -47,7 +47,7 @@ public class DepositAmtScreen extends JFrame {
             if (m.matches()){
                 JOptionPane.showMessageDialog(null, "Rs. " + bal + " Deposited Successfully");
                 CustomerTransactionsDao ctd = new CustomerTransactionsDao();
-                ctd.deposit(formNum, cardNum, pin, Integer.parseInt(bal));
+                ctd.deposit(formNum, Integer.parseInt(bal));
                 ctd.insertIntoAccountStatement(formNum, String.valueOf(new Date()), "Deposit",
                         Integer.parseInt(bal));
                 new ATMMenuScreen(formNum, cardNum, pin);

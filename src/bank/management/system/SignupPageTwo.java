@@ -30,7 +30,7 @@ public class SignupPageTwo extends JFrame {
         add(religion);
 
         String[] religions = {"Hindu", "Muslim", "Sikh", "Christian", "Other"};
-        JComboBox<String> religionsMenu = new JComboBox<String>(religions);
+        JComboBox<String> religionsMenu = new JComboBox<>(religions);
         religionsMenu.setBounds(310, 130, 350, 30);
         add(religionsMenu);
 
@@ -40,7 +40,7 @@ public class SignupPageTwo extends JFrame {
         add(category);
 
         String[] categories = {"General", "OBC", "SC", "ST", "Other"};
-        JComboBox<String> categoriesMenu = new JComboBox<String>(categories);
+        JComboBox<String> categoriesMenu = new JComboBox<>(categories);
         categoriesMenu.setBounds(310, 190, 350, 30);
         add(categoriesMenu);
 
@@ -51,7 +51,7 @@ public class SignupPageTwo extends JFrame {
 
         String[] incomes = {"Null", "<1,50,000", "<2,50,000",
                 "<5,00,000", "Upto 10,00,000", "Above 10,00,000"};
-        JComboBox<String> incomeMenu = new JComboBox<String>(incomes);
+        JComboBox<String> incomeMenu = new JComboBox<>(incomes);
         incomeMenu.setBounds(310, 250, 350, 30);
         add(incomeMenu);
 
@@ -63,7 +63,7 @@ public class SignupPageTwo extends JFrame {
         add(qualification);
 
         String[] qualifications = {"Non-Graduate", "Graduate", "Post-Graduate", "Doctorate", "Other"};
-        JComboBox<String> qualificationMenu = new JComboBox<String>(qualifications);
+        JComboBox<String> qualificationMenu = new JComboBox<>(qualifications);
         qualificationMenu.setBounds(310, 310, 350, 30);
         add(qualificationMenu);
 
@@ -73,7 +73,7 @@ public class SignupPageTwo extends JFrame {
         add(occupation);
 
         String[] occupations = {"Salaried", "Self-Employed", "Business", "Student", "Retired", "Other"};
-        JComboBox<String> occupationMenu = new JComboBox<String>(occupations);
+        JComboBox<String> occupationMenu = new JComboBox<>(occupations);
         occupationMenu.setBounds(310, 370, 350, 30);
         add(occupationMenu);
 
@@ -158,7 +158,7 @@ public class SignupPageTwo extends JFrame {
             }
 
             if (error.equals("")){
-                boolean isSeniorCitizen = false, hasExistingAcct = false;
+                boolean isSeniorCitizen, hasExistingAcct;
                 isSeniorCitizen = yes1.isSelected();
                 hasExistingAcct = yes2.isSelected();
                 SignupTwoDao.insertDetailsToSignupPageTwo((int) num, religionVal, categoryVal, incomeVal,

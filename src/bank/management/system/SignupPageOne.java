@@ -5,7 +5,6 @@ import java.math.BigInteger;
 import java.util.UUID;
 import javax.swing.*;
 import java.awt.*;
-import java.util.Random;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -158,7 +157,7 @@ public class SignupPageOne extends JFrame {
             String nameVal = nameField.getText();
             String fNameVal = fNameField.getText();
             String dobVal = ((JTextField) dateChooser.getDateEditor().getUiComponent()).getText();
-            String genderVal = null, martialStatusVal = null;
+            String genderVal, martialStatusVal;
             String emailVal = emailField.getText();
             String addrVal = addrField.getText();
             String cityVal = cityField.getText();

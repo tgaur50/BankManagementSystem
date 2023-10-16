@@ -6,7 +6,6 @@ import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.math.BigInteger;
 import java.util.ArrayList;
-import java.util.Random;
 import java.util.UUID;
 
 public class SignupPageThree extends JFrame implements ItemListener {
@@ -127,7 +126,7 @@ public class SignupPageThree extends JFrame implements ItemListener {
 
         JCheckBox declaration = new JCheckBox("I hearby declare that  the above entered " +
                 "details are correct to the best of my knowledge");
-        declaration.setFont(new Font("Arial", Font.TYPE1_FONT, 12));
+        declaration.setFont(new Font("Arial", Font.BOLD, 12));
         declaration.setBounds(100, 660, 600, 30);
         declaration.setSelected(true);
         add(declaration);
@@ -197,7 +196,7 @@ public class SignupPageThree extends JFrame implements ItemListener {
                 num1 = Long.parseLong(generateUUIDNo1.substring( generateUUIDNo1.length() - 16));
                 num2 = Long.parseLong(generateUUIDNo2.substring( generateUUIDNo2.length() - 4));
 
-                boolean isAgreed = false;
+                boolean isAgreed;
                 isAgreed = declaration.isSelected();
                 SignupThreeDao.insertDetailsToSignupPageThree((int) num, acctTypeVal, num1, (int) num2,
                         reqServices, isAgreed);
@@ -228,7 +227,7 @@ public class SignupPageThree extends JFrame implements ItemListener {
     public void itemStateChanged(ItemEvent e) {
         if (e.getSource().getClass() == JCheckBox.class){
             JCheckBox cb = (JCheckBox)e.getSource();
-            if (e.getStateChange() == e.SELECTED){
+            if (e.getStateChange() == ItemEvent.SELECTED){
                 listOfServices.add(cb.getText());
             }
             else {
