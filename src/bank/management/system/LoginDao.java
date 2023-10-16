@@ -7,7 +7,7 @@ import java.sql.SQLException;
 
 public class LoginDao {
     ConnectionToJdbc con;
-    private Connection cn;
+    private final Connection cn;
     PreparedStatement ps;
     public LoginDao(){
         con = new ConnectionToJdbc();
